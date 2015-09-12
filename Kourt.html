@@ -1,0 +1,42 @@
+<head>
+  <title>Kourt</title>
+</head>
+
+<body>
+  <h1>Welcome to Kourt!</h1>
+{{>errors}}
+</body>
+
+<template name="hello">
+{{#if isNotRegistered}}
+  <p>Please enter either your drivers license number or social security number.</p>
+  <label for="driversLicense">Drivers License Number</label><input id="driversLicense" type="text">
+  <label for="ssNumber">Social Security Number</label><input id="ssNumber">
+  <button id="registerSubmit">Register</button>
+{{else}}
+    {{>startMenu}}
+{{/if}}
+</template>
+
+<template name="errors">
+<p>{{errorMessage}}</p>
+</template>
+
+<template name="easyRouter">
+    {{#with getRoute}}
+        {{>.}}
+    {{/with}}
+</template>
+
+<template name="startMenu">
+<button id="muniMap">Municipality Map</button>
+<button id="myCitations">My Citations and Violations</button>
+</template>
+
+<template name="muniMap">
+placeholder text for muniMap
+</template>
+
+<template name="myCitations">
+placeholder text for myCitations
+</template>
