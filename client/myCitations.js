@@ -18,9 +18,24 @@ Template.myCitations.onRendered(function() {
       } else {
           Session.set('errorMessage','We could not find you in the database with the information you provided.');
       }
+      
+      loadClassie();
+      loadMenujs();
   });
   Template.myCitations.helpers({
       getCitations:function() {
           return Session.get('citations');
+      }
+  });
+  
+  Template.myCitations.events({
+      'click #muniMap' :  function() {
+          Router.go('/muniMap');
+      },
+      'click #myCitations' : function() {
+          Router.go('/myCitations');
+      },
+      'click #lookupTicket' : function() {
+          Router.go('/lookupTicket');
       }
   });

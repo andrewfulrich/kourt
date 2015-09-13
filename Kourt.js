@@ -21,11 +21,11 @@ if (Meteor.isClient) {
     
     Meteor.startup(function () {
         if(Session.get('errorMessage') == undefined) {
-         Session.setDefault('errorMessage', '');
+         /*Session.setDefault('errorMessage', '');
             Session.setDefault('driversLicense','');
             Session.setDefault('ssNumber','');
             Session.setDefault('currentScreen','hello');
-            Session.setDefault('citations',[]);
+            Session.setDefault('citations',[]);*/
         }
     });
   
@@ -58,7 +58,7 @@ if (Meteor.isClient) {
     }
   });
 
-    getDefendant = function() {
+    getDefendant = function(driversLicense,ssNumber) {
         var defendant={};
         // increment the counter when button is clicked
         if(ssNumber != "") {

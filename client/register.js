@@ -3,7 +3,7 @@ Template.register.events({
       'click #registerSubmit': function (event,template) {
         var ssNumber=template.find("#q1").value;
         var driversLicense=template.find("#q4").value;
-        getDefendant();
+        getDefendant(ssNumber,driversLicense);
       //allOfThem=Boundaries.findOne();
     }
   });
