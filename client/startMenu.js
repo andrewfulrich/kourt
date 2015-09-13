@@ -13,5 +13,5 @@ Template.startMenu.events({
   Template.startMenu.onRendered(function() {
       loadClassie();
       loadMenujs();
-      getDefendant();
+      //getDefendant();
   });

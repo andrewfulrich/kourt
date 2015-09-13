@@ -1,5 +1,5 @@
 Template.myCitations.onRendered(function() {
-      //var defendant = Session.get('defendant');
+      var defendant = Session.get('defendant');
       var currentUser = CurrentUser.findOne();
       Session.set('defendant',currentUser.defendant);
       var citations=[];
@@ -16,7 +16,7 @@ Template.myCitations.onRendered(function() {
               
           }
       } else {
-          Session.set('errorMessage','We could not find you in the database with the information you provided.');
+          //Session.set('errorMessage','We could not find you in the database with the information you provided.');
       }
       
       loadClassie();
