@@ -1,4 +1,4 @@
-Template.startMenu.events({
+Template.muniMap.events({
      'click #muniMap' :  function() {
          Router.go('/muniMap');
      },
@@ -10,7 +10,7 @@ Template.startMenu.events({
      }
   });
   
-  Template.startMenu.onRendered(function() {
+  Template.muniMap.onRendered(function() {
       loadClassie();
       loadMenujs();
   });

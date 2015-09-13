@@ -1,16 +1,16 @@
-Template.startMenu.events({
+Template.lookupTicket.events({
      'click #muniMap' :  function() {
          Router.go('/muniMap');
      },
      'click #myCitations' : function() {
          Router.go('/myCitations');
      },
-     'click #lookupTicket' : function() {
-         Router.go('/lookupTicket');
-     }
+    'click #lookupTicket' : function() {
+        Router.go('/lookupTicket');
+    }
   });
   
-  Template.startMenu.onRendered(function() {
+  Template.lookupTicket.onRendered(function() {
       loadClassie();
       loadMenujs();
   });
