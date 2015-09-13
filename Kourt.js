@@ -45,7 +45,7 @@ if (Meteor.isClient) {
         this.render('myCitations');
       }
   });
-  Router.route('lookupTicket', function() {
+  Router.route('/lookupTicket', function() {
       this.render('lookupTicket');
   });
   Router.route('/muniMap', function() {
