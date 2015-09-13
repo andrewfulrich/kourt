@@ -2,17 +2,129 @@
                 <meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Kourt Konnect Home</title>
+		<title>Court Connect Home</title>
 		
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<!-- csstransforms3d-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load --> 
-		
+		<style type="text/css">
+
+
+html {
+  height: 10%;
+  font-size: 1em;
+  background-color: #ED8151 ;
+  background-image:
+    /* 1 */
+    radial-gradient(
+      white 10%,
+      hsla(0,0%,100%,0) 11%
+      ),
+    /* 2 */
+    radial-gradient(
+      white 10%,
+      hsla(0,0%,100%,0) 11%
+      ),
+    /* 3 */
+    radial-gradient(
+      white 8%,
+      hsla(0,0%,100%,0) 9%
+      ),
+    /* 4 */
+    radial-gradient(
+      white 6%,
+      hsla(0,0%,100%,0) 7%
+      ),
+    /* 5 */
+    radial-gradient(
+      white 6%,
+      hsla(0,0%,100%,0) 7%
+      ),
+    /* 6 */
+    radial-gradient(
+      white 8%,
+      hsla(0,0%,100%,0) 9%
+      ),  
+    /* 7 */
+    radial-gradient(
+      white 10%,
+      hsla(0,0%,100%,0) 11%
+      ),
+    /* 8 */
+    radial-gradient(
+      white 10%,
+      hsla(0,0%,100%,0) 11%
+      ),
+    
+    linear-gradient( 
+      hsl(12,80%,70%), 
+      hsl(340,60%,80%)
+      );
+  background-position: 
+    calc(50% - 5em) 50%,/* 1 */
+    calc(50% - 2.5em) calc(50% - 1.5em),/* 2 */
+    50% calc(50% - 2em),/* 3 */ 
+    calc(50% + 2.5em) calc(50% - 1.5em),/* 4 */
+    
+    calc(50% - 5em) 50%,/* 5 */
+    calc(50% - 2.5em) calc(50% + 1.5em),/* 6 */
+    50% calc(50% + 2em),/* 7 */ 
+    calc(50% + 2.5em) calc(50% + 1.5em),/* 8 */
+    
+    0 50%;    
+    background-size: 
+      10em 10em,
+      10em 10em,
+      10em 10em,
+      10em 10em,
+    
+      10em 10em,
+      10em 10em,
+      10em 10em,
+      10em 10em,
+      
+      100% 100%;
+  background-repeat: repeat-x;
+  animation: .25s ring linear infinite;
+  }
+
+
+@keyframes ring {
+  0% {
+    background-position: 
+      calc(50% - 5em) 50%,/* 1 */
+      calc(50% - 2.5em) calc(50% - 1.5em),/* 2 */
+      50% calc(50% - 2em),/* 3 */ 
+      calc(50% + 2.5em) calc(50% - 1.5em),/* 4 */
+      
+      calc(50% - 5em) 50%,/* 5 */
+      calc(50% - 2.5em) calc(50% + 1.5em),/* 6 */
+      50% calc(50% + 2em),/* 7 */ 
+      calc(50% + 2.5em) calc(50% + 1.5em),/* 8 */
+      
+      0 50%;  
+    }
+  100% { 
+    background-position: 
+      calc(50% - 2.5em) calc(50% - 1.5em),/* 1 */
+      50% calc(50% - 2em),/* 2 */
+      calc(50% + 2.5em) calc(50% - 1.5em),/* 3 */ 
+      calc(50% + 5em) 50%,/* 4 */
+      
+      calc(50% - 2.5em) calc(50% + 1.5em),/* 5 */
+      50% calc(50% + 2em),/* 6 */
+      calc(50% + 2.5em) calc(50% + 1.5em),/* 7 */ 
+      calc(50% + 5em) 50%,/* 8 */
+      
+      0 50%;  
+    }
+  }
+  </style>
 </head>
 
 <body>
-  <h1>Welcome to Kourt!</h1>
+  
 {{>errors}}
 </body>
 
