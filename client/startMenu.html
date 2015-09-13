@@ -1,40 +1,82 @@
 <template name="startMenu">
+
 <link rel="stylesheet" type="text/css" href="css/component.css" />
+<style type="text/css"> 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+</style>
 
   <div id="perspective" class="perspective effect-moveleft">
 			<div class="container">
 				<div class="wrapper"><!-- wrapper needed for scroll -->
 					<!-- Top Navigation -->
 					<div class="codrops-top clearfix">
-						<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/ProgressButtonStyles/"><span>Courts Map</span></a>
-						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=17915"><span>Dont Know my Social/License Number</span></a></span>
+						<a class="codrops-icon codrops-icon-prev" href="./"><span>Exit</span></a>
+						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://www.sjcummings.com/CourtConnect/Maps/"><span>Courts Map</span></a></span>
 					</div>
 					<header class="codrops-header">
-						<h1>Kourt Konnect Homepage <span>This is you homescreen where you can check for citations & warrents</span></h1>	
+						<h1>Court Contact Homepage <span>This is you homescreen where you can check for citations & warrents</span></h1>	
 					</header>
 					<div class="main clearfix">
 						<div class="column">
-							<p><button id="showMenu">Show Menu</button></p>
+							<p><button id="showMenu">Take Action</button></p>
 							<p>Click on this button to see the content what actions you can take.</p>
 						</div>
+
 						<div class="column">
-						
+							<p>Total Tickets</p>
+						<table style="width:100%">
+							<tr>
+    <th>Open Cases</th>
+    <th>Closed Cases</th> 
+    <th>Upcoming Court Date</th>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>7</td> 
+    <td>12/1/2015</td>
+  </tr>
+ 
+</table>
+							<p>Total Warrants & Fines</p>
+						<table style="width:100%">
+							<tr>
+    <th>Amount of Warrants</th>
+    <th>Total Sum of Fines</th> 
+    <th>Top Violation</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>$350.00</td> 
+    <td>Failure to Yield</td>
+  </tr>
+
+</table>
 						</div>
 						
 						<div class="related">
 							<p>If you are having trouble authenticating you ID check one of the FAQ below.</p>
-							<p><a href="http://tympanus.net/Tutorials/AnimatedBorderMenus/">Authenticate without any ID numbers </a></p>
-							<p><a href="http://tympanus.net/Development/SidebarTransitions/">Authinticate without and Social Security Number</a></p>
+							<p><a href="http://www.sjcummings.com/CourtConnect/Registration/">How do I identify myself without ID's numbers </a></p>
+							<p><a href="https://squareup.com/login">Can I uthenticate without a Social Security Number</a></p>
 						</div>
 					</div><!-- /main -->
 				</div><!-- wrapper -->
 			</div><!-- /container -->
 			<nav class="outer-nav right vertical">
 				<a href="#" class="icon-home">Home</a>
-				<a href="lookupTicket" class="icon-news">Lookup Ticket</a>
-				<a href="muniMap" class="icon-image">Locate Court</a>
-				<a href="myCitations" class="icon-upload">Warrant Check</a>
+				<a href="lookupTicket" class="icon-news">Lookup Tickets</a>
+				<a href="muniMap" class="icon-image">Locate Courts</a>
+				<a href="myCitations" class="icon-upload">Check for Warrents and Fines</a>
 				
 			</nav>
+
+
 		</div><!-- /perspective -->
 </template>

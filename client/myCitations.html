@@ -2,5 +2,100 @@
 {{#each getCitations}}
 {{this}}
 {{/each}}
-placeholder text for myCitations
+
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+<style type="text/css"> 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+</style>
+
+ <div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+					<!-- Top Navigation -->
+					<div class="codrops-top clearfix">
+						<a class="codrops-icon codrops-icon-prev" href="./"><span>Home</span></a>
+						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://www.sjcummings.com/CourtConnect/Maps/"><span>Courts Map</span></a></span>
+					</div>
+					<header class="codrops-header">
+						<h1>Court Contact Warrant & Fine Check <span>This is where you can check for citations & warrants</span></h1>	
+					</header>
+					<div class="main clearfix">
+						<div class="column">
+							<p><button id="showMenu">Actions</button></p>
+							<p>Click on this button to see the content what actions you can take.</p>
+						</div>
+
+
+						<div class="column">
+						<p>Warrants & Fines</p>
+<table style="width:100%">
+							<tr>
+    <th>Violation Name</th>
+    <th>Price</th> 
+    <th>Warrant</th>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$35.80</td> 
+    <td>TRUE</td>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$0.00</td> 
+    <td>FALSE</td>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$0.00</td> 
+    <td>FALSE</td>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$43.98</td> 
+    <td>FALSE</td>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$202.24</td> 
+    <td>FALSE</td>
+  </tr>
+  <tr>
+    <td>RICHMOND HEIGHTS - 450901231 - 42067</td>
+    <td>$0.00</td> 
+    <td>FALSE</td>
+  </tr>
+</table>
+
+						</div>
+						
+						<div class="related">
+				
+							<p>If you are having trouble authenticating you ID check one of the FAQ below.</p>
+							<p><a href="http://www.sjcummings.com/CourtConnect/Registration/">How do I identify myself without ID's numbers</a></p>
+							<p><a href="https://squareup.com/login">Can I authenticate without a Social Security Number</a></p>
+						</div>
+					</div><!-- /main -->
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+			<nav class="outer-nav right vertical">
+				<a href="#" class="icon-home">Look by Case Number</a>
+				<a href="lookupTicket" class="icon-news">Lookup Ticket</a>
+				<a href="muniMap" class="icon-image">Locate Court</a>
+				<a href="myCitations" class="icon-upload">Warrant Check</a>
+				
+			</nav>
+
+
+		</div><!-- /perspective -->
 </template>

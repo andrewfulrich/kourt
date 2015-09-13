@@ -1,3 +1,81 @@
 <template name="lookupTicket">
-<p>placeholder</p>
+
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+<style type="text/css"> 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+</style>
+
+<div id="perspective" class="perspective effect-moveleft">
+			<div class="container">
+				<div class="wrapper"><!-- wrapper needed for scroll -->
+					<!-- Top Navigation -->
+					<div class="codrops-top clearfix">
+						<a class="codrops-icon codrops-icon-prev" href="./"><span>Home</span></a>
+						<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://www.sjcummings.com/CourtConnect/Maps/"><span>Courts Map</span></a></span>
+					</div>
+					<header class="codrops-header">
+						<h1>Court Contact: Lookup Ticket <span>Lookup your tickets by court and find out ways to pay them</span></h1>	
+					</header>
+					<div class="main clearfix">
+						<div class="column">
+							<p><button id="showMenu">Ticket Actions</button></p>
+							<p>Click on this button to see what other actions you can take.</p>
+						</div>
+						<div class="column">
+						
+<table style="width:100%">
+							<tr>
+    <th>Ticket Name</th>
+    <th>Courthouse Link</th> 
+    <th>Warrant</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td> 
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td> 
+    <td>94</td>
+  </tr>
+</table>
+
+						</div>
+						
+						<div class="related">
+							<p>If you are having trouble authenticating you ID check one of the FAQ below.</p>
+							<p><a href="http://www.sjcummings.com/CourtConnect/Registration/">How do I identify myself without ID's numbers </a></p>
+							<p><a href="https://squareup.com/login">Can I authenticate without a Social Security Number</a></p>
+						</div>
+
+
+
+					</div><!-- /main -->
+
+
+				</div><!-- wrapper -->
+			</div><!-- /container -->
+
+
+
+			<nav class="outer-nav right vertical">
+				<a href="#" class="icon-home">Pay Tickets</a>
+				<a href="locatecourt.html" class="icon-image">Locate the Court</a>
+				<a href="warrantcheck.html" class="icon-upload">Check for all Warrants and Fines</a>
+				<a href="lookupticket.html" class="icon-news">Lookup All Tickets</a>
+			</nav>
+
+
+
+		</div><!-- /perspective -->
 </template>
