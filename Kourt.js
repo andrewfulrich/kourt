@@ -9,7 +9,7 @@ Users = new Mongo.Collection("Users");
 allOfThem=[];
 
 stripObjectId = function(theString) {
-    //return theString.replace(
+    return theString.replace('ObjectID("','').replace('")');
 }
 
 if (Meteor.isClient) {
@@ -21,11 +21,11 @@ if (Meteor.isClient) {
     
     Meteor.startup(function () {
         if(Session.get('errorMessage') == undefined) {
-         /*sSession.setDefault('errorMessage', '');
+         Session.setDefault('errorMessage', '');
             Session.setDefault('driversLicense','');
             Session.setDefault('ssNumber','');
             Session.setDefault('currentScreen','hello');
-            Session.setDefault('citations',[]);*/
+            Session.setDefault('citations',[]);
         }
     });
   
@@ -57,6 +57,41 @@ if (Meteor.isClient) {
       return Session.get('errorMessage');
     }
   });
+
+    getDefendant = function() {
+        var defendant={};
+        // increment the counter when button is clicked
+        if(ssNumber != "") {
+            Session.set('ssNumber',ssNumber);
+        }
+        if(driversLicense != "") {
+            Session.set('driversLicense',driversLicense);
+        }
+        if(driversLicense == "" && ssNumber == "") {
+            Session.set('errorMessage',"Please enter either your social security number or drivers license number to register");
+        }
+        else {
+            Session.set('errorMessage','');
+            //probably put the ssNumber/driversLicense in the db
+            var isFound=false;
+            if(driversLicense != "") {
+                defendant = Defendants.findOne({drivers_license_number__c: driversLicense});
+            }
+            if(!defendant.hasOwnProperty("_id") && ssNumber != "") { //if we didn't find anything from that search, try this
+                defendant = Defendants.findOne({social_security: ssNumber});
+            }
+            if(defendant.hasOwnProperty("_id")) {
+                isFound=true;
+                Session.set('defendant',defendant); 
+            } else {
+                isFound=false;
+                defendant={drivers_license_number__c: driversLicense, social_security: ssNumber};
+                Session.set('defendant',defendant); 
+            }
+            //CurrentUser.insert({driversLicense: driversLicense, ssNumber: ssNumber,isFound:isFound,defendant:defendant});
+        }
+        return defendant;
+    }
 }
 
 if (Meteor.isServer) {
