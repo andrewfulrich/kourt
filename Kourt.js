@@ -21,11 +21,11 @@ if (Meteor.isClient) {
     
     Meteor.startup(function () {
         if(Session.get('errorMessage') == undefined) {
-         Session.setDefault('errorMessage', '');
+         /*sSession.setDefault('errorMessage', '');
             Session.setDefault('driversLicense','');
             Session.setDefault('ssNumber','');
             Session.setDefault('currentScreen','hello');
-            Session.setDefault('citations',[]);
+            Session.setDefault('citations',[]);*/
         }
     });
   
