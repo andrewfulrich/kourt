@@ -8,3 +8,5 @@ meteor-platform
 autopublish
 insecure
 iron:router
+mdg:geolocation
+cwaring:modernizr
