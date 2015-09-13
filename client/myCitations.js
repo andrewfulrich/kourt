@@ -1,25 +1,22 @@
 Template.myCitations.onRendered(function() {
-      var defendant = {};
+      //var defendant = Session.get('defendant');
+      var currentUser = CurrentUser.findOne();
+      Session.set('defendant',currentUser.defendant);
       var citations=[];
       var driversLicense = Session.get('driversLicense'); //valid sample one: drivers_license_number__c (String): "Z854997336"
       var ssNumber= Session.get('ssNumber');
-      if(driversLicense != "") {
-          defendant = Defendants.findOne({drivers_license_number__c: driversLicense});
-      }
-      if(!defendant.hasOwnProperty("_id") && ssNumber != "") { //if we didn't find anything from that search, try this
-          defendant = Defendants.findOne({drivers_license_number__c: driversLicense});
-      }
       
-      if(defendant.hasOwnProperty("_id")) { //we've found a defendant matching the info given
-          Session.set('defendant',defendant);
+      if(defendant != undefined) { //we've found a defendant matching the info given
+          Session.set('errorMessage','');
           citations = Citations.find({DefendentID__c: defendant._id.toString()}).map(function(u) { return u; });
 
           Session.set('citations',citations);
           if(citations.length > 0) {
               //TODO get all violations using $in clause
+              
           }
       } else {
-          //insert a new record for defendant
+          Session.set('errorMessage','We could not find you in the database with the information you provided.');
       }
   });
   Template.myCitations.helpers({

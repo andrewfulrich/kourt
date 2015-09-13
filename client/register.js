@@ -17,6 +17,21 @@ Template.register.events({
         else {
             Session.set('errorMessage','');
             //probably put the ssNumber/driversLicense in the db
+            var isFound=false;
+            if(driversLicense != "") {
+                defendant = Defendants.findOne({drivers_license_number__c: driversLicense});
+            }
+            if(!defendant.hasOwnProperty("_id") && ssNumber != "") { //if we didn't find anything from that search, try this
+                defendant = Defendants.findOne({drivers_license_number__c: driversLicense});
+            }
+            if(defendant.hasOwnProperty("_id")) {
+                isFound=true;
+               Session.set('defendant',defendant); 
+            } else {
+                isFound=false;
+               Session.set('defendant',undefined); 
+            }
+            CurrentUser.insert({driversLicense: driversLicense, ssNumber: ssNumber,isFound:isFound,defendant:defendant});
         }
       allOfThem=Boundaries.findOne();
     }

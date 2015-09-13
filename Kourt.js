@@ -8,19 +8,34 @@ Users = new Mongo.Collection("Users");
 
 allOfThem=[];
 
+stripObjectId = function(theString) {
+    //return theString.replace(
+}
+
 if (Meteor.isClient) {
-  Session.setDefault('errorMessage', '');
-  Session.setDefault('driversLicense','');
-  Session.setDefault('ssNumber','');
-  Session.setDefault('currentScreen','hello');
-  Session.setDefault('citations',[]);
+    CurrentUser = new Mongo.Collection('currentUser');
+    
+    function isNotRegistered() {
+        return Session.get('ssNumber') == '' && Session.get('driversLicense') == '';
+    }
+    
+    Meteor.startup(function () {
+        if(Session.get('errorMessage') == undefined) {
+         Session.setDefault('errorMessage', '');
+            Session.setDefault('driversLicense','');
+            Session.setDefault('ssNumber','');
+            Session.setDefault('currentScreen','hello');
+            Session.setDefault('citations',[]);
+        }
+    });
   
-  function isNotRegistered() {
-      return Session.get('ssNumber') == '' && Session.get('driversLicense') == '';
-  }
   
   Router.route('/', function () {
-      this.render('hello');
+      if(isNotRegistered()) {
+          this.render('register');
+      } else {
+          this.render('startMenu');
+      }
   });
   
   Router.route('/myCitations', function() {
@@ -30,7 +45,9 @@ if (Meteor.isClient) {
         this.render('myCitations');
       }
   });
-  
+  Router.route('lookupTicket', function() {
+      this.render('lookupTicket');
+  });
   Router.route('/muniMap', function() {
       this.render('muniMap');
   });
@@ -39,12 +56,6 @@ if (Meteor.isClient) {
     errorMessage: function () {
       return Session.get('errorMessage');
     }
-  });
-  
-  Template.hello.helpers({
-      isNotRegistered:function() {
-          return isNotRegistered();
-      }
   });
 }
 
